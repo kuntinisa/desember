@@ -6,9 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MY PROFILE</title>
+    <title>Eprofile</title>
 
     <!-- Bootstrap Core CSS -->
+    <link rel="icon" href="<?=base_url()?>/assets/img/logo.png" type="image/gif">
+        
     <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
@@ -39,7 +41,7 @@
 
     <!-- croppie -->
     <!-- <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'> -->
-<link rel='stylesheet prefetch' href='http://foliotek.github.io/Croppie/croppie.css'>
+<link rel='stylesheet prefetch' href='<?php echo base_url(); ?>assets/css/croppie_offline.css'>
 
       <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/croppie.css"> -->
 
@@ -51,6 +53,45 @@
   
 
 </style> -->
+<style>
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    margin-top: 0;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
 
 <body>
 
@@ -63,13 +104,13 @@
                     <span class="ic
     on-bar"></span>
                 </button>
-                <a class="navbar-brand" href = "<?php echo base_url(); ?>dashboard">MY PROFILE</a>
+                <a class="navbar-brand" href = "<?php echo base_url(); ?>dashboard">Eprofile</a>
                
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
@@ -118,7 +159,7 @@
                         </li>
                     </ul>
                     <!-- /.dropdown-messages -->
-                </li>
+                <!-- </li>  -->
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -201,7 +242,7 @@
                     <!-- /.dropdown-tasks -->
                 </li>
                 <!-- /.dropdown -->
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
@@ -259,7 +300,7 @@
                         </li>
                     </ul>
                     <!-- /.dropdown-alerts -->
-                </li>
+                <!-- </li> -->
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -271,7 +312,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo base_url(); ?>logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -284,52 +325,26 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
+                            
                             <!-- /input-group -->
                         </li>
                         <li>
                             <a href = "<?php echo base_url(); ?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+                         <li>
+                            <a href = "<?php echo base_url(); ?>biodata"><i class="fa fa-user fa-fw"></i> Biodata</a>
+                        </li>
+                         <li>
+                            <a href = "<?php echo base_url(); ?>dashboard/template"><i class="fa fa-files-o fa-fw"></i> Template</a>
+                        </li>
+                         <li>
+                            <a href = "<?php echo base_url(); ?>eprofile"><i class="fa fa-newspaper-o fa-fw"></i> Profile Online Saya</a>
+                        </li>
+                        
                         <li>
-                            <a><i class="fa fa-bar-chart-o fa-fw"></i>My Profile<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a  href = "<?php echo base_url(); ?>biodata">Biodata</a>
-                                </li>
-                                <li>
-                                    <a href = "<?php echo base_url(); ?>dashboard/template">Template</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href = "<?php echo base_url(); ?>dashboard/settings"><i class="fa fa-cogs fa-fw"></i> Settings</a>
                         </li>
-                        <li>
-                            <a href = "<?php echo base_url(); ?>dashboard/settings"><i class="fa fa-table fa-fw"></i> Settings</a>
-                        </li>
-                        <li>
-                            <a href = "<?php echo base_url(); ?>dashboard/tools"><i class="fa fa-edit fa-fw"></i> Tools</a>
-                        </li>
-                       <li>
-                            <a><i class="fa fa-bar-chart-o fa-fw"></i>Help<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a  href = "<?php echo base_url(); ?>dashboard/helpdesk">Helpdesk</a>
-                                </li>
-                                <li>
-                                    <a href = "<?php echo base_url(); ?>dashboard/wiseguide">Wise guide</a>
-                                </li>
-                                 <li>
-                                    <a href = "<?php echo base_url(); ?>dashboard/feedback">Feedback</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                       
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

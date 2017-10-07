@@ -20,9 +20,9 @@ class Privacypolicy extends CI_Controller {
 	 public function index()
  {
  	
-  $this->load->view('main/header');
+  // $this->load->view('main/header');
   $this->load->view('main/privacypolicy');
-  $this->load->view('main/footer');
+  // $this->load->view('main/footer');
  }
 
 }

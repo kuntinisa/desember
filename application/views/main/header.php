@@ -9,7 +9,7 @@
         <meta charset="utf-8">
 		<!-- Always force latest IE rendering engine or request Chrome Frame -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Blue One Page HTML Template</title>		
+        <title>Eprofile</title>		
 		<!-- Meta Description -->
         <meta name="description" content="Blue One Page Creative HTML5 Template">
         <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
@@ -20,7 +20,7 @@
 		
 		<!-- CSS
 		================================================== -->
-		
+		<link rel="icon" href="<?=base_url()?>/assets/img/logo.png" type="image/gif">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Fontawesome Icon font -->
@@ -46,6 +46,17 @@
 		  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		  <script type='text/javascript' src='<?php echo base_url(); ?>assets/particle/jquery.particleground.js'></script>
 		  <script type='text/javascript' src='<?php echo base_url(); ?>assets/particle/js/demo.js'></script>
+
+		  <!-- script untuk google auth -->
+		   <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+  </script>
 
 		
 

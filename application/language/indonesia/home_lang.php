@@ -18,7 +18,7 @@ $lang['f4'] = 'Membuat Kartu Nama ';
 
 $lang['register'] = 'Daftar';
 $lang['signin'] = 'Masuk';
-$lang['mt'] = 'Lebih dari 354 orang telah menggunakan my profile untuk mengesankan kolega mereka';
+$lang['mt'] = 'Lebih dari 354 orang telah menggunakan Eprofile untuk mengesankan kolega mereka';
 $lang['ju'] = 'Bergabung';
 
 $lang['home'] = 'home';
@@ -32,7 +32,7 @@ $lang['testimonial'] = 'testimoni';
 $lang['h1'] = 'Solusi Anda untuk Profil Online';
 
 
-$lang['a1'] = 'MY PROFILE adalah website layanan pembuatan CV atau Resume atau Profile secara mudah dan cepat. MY PROFILE memberikan banyak kemudahan dan sentuhan teknologi pada profil Anda untuk memberi kesan yang baik pada Anda dan orang-orang sekitar';
+$lang['a1'] = 'Eprofile adalah website layanan pembuatan CV atau Resume atau Profile secara mudah dan cepat. Eprofile memberikan banyak kemudahan dan sentuhan teknologi pada profil Anda untuk memberi kesan yang baik pada Anda dan orang-orang sekitar';
 
 
 // ------------------ini bagian admin---------------------------
@@ -80,8 +80,30 @@ $lang['deskripsi'] = 'Deskripsi';
 $lang['riwpek'] = 'Riwayat pekerjaan';
 $lang['nampek'] = 'Nama pekerjaan';
 $lang['namper'] = 'Nama perusahaan';
-$lang['tahun'] = 'Tahun';
+$lang['startdate'] = 'Tanggal mulai bekerja';
+$lang['employed'] = 'Masih bekerja saat ini';
+$lang['enddate'] = 'Tanggal selesai bekerja';
+$lang['compensasion'] = 'Gaji';
+$lang['mata_uang'] = 'Mata Uang';
+$lang['interval'] = 'Jangka waktu';
+$lang['year'] = 'Tahun';
 
+
+$lang['skill_name'] = 'Nama keahlian';
+$lang['level'] = 'Level';
+$lang['beginner'] = 'Pemula';
+$lang['intermediate'] = 'Intermediate';
+$lang['advanced'] = 'Advanced';
+$lang['expert'] = 'Ahli / Mahir';
+
+
+$lang['language_name'] = 'Nama bahasa';
+$lang['conversational'] = 'Baik';
+$lang['fluent'] = 'Cukup fasih';
+$lang['native'] = 'Fasih';
+$lang['award_name'] = 'Nama penghargaa';
+$lang['reference_name'] = 'Nama rekomendasi';
+$lang['relationship'] = 'Hubungan';
 
 
 

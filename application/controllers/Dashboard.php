@@ -9,37 +9,38 @@ public function __construct()
     }
 	 public function index()
  {
- 	// cek sudah login apa belum dlu
- 	// if (sudah login){
-
- 	// } else {
- 	// 	redirect('main');
- 	// }
- 	$bahasa = $this->session->userdata('language');
- 	$this->load->language('home', $bahasa);
-	$data['dashboard'] = $this->lang->line('dashboard');
-	$data[''] = $this->lang->line('settings');
-	$data['myprofile'] = $this->lang->line('myprofile');
+ 	if($this->session->userdata('member_identifier')){
+		$bahasa = $this->session->userdata('language');
+		$this->load->language('home', $bahasa);
+		$data['dashboard'] = $this->lang->line('dashboard');
+		$data[''] = $this->lang->line('settings');
+		$data['myprofile'] = $this->lang->line('myprofile');
 		$data['d1'] = $this->lang->line('d1');
-	// $data[''] = $this->lang->line('');
-	// $data[''] = $this->lang->line('');
-	// $data[''] = $this->lang->line('');
-	// $data[''] = $this->lang->line('');
-  $this->load->view('user/header');
-  $this->load->view('user/index');
+		$this->load->view('user/header');
+		$this->load->view('user/index');
+	}else{
+	    redirect();
+	}
+ 	
  }
 
 public function template(){
+	if($this->session->userdata('member_identifier')){
 	$bahasa = $this->session->userdata('bahasa');
- 	
+ 	$data['username'] = $this->Model_data->get_username();
  	$this->load->language('home', $bahasa);
 	$data['dashboard'] = $this->lang->line('dashboard');
 	$data[''] = $this->lang->line('settings');
 	$data['myprofile'] = $this->lang->line('myprofile');
-$this->load->view('user/header');
-  $this->load->view('user/template');
+	$this->load->view('user/header');
+  	$this->load->view('user/template', $data);
+  }
+  else {
+  	redirect();
+  }
 }
 public function view_template($number_template){
+	if($this->session->userdata('member_identifier')){
 	$bahasa = $this->session->userdata('language');
  	$this->load->language('home', $bahasa);
 	$data['foto'] = $this->lang->line('foto');
@@ -50,10 +51,8 @@ public function view_template($number_template){
 	$data['telepon'] = $this->lang->line('telepon');
 	$data['email'] = $this->lang->line('email');
 	$data['jenkel'] = $this->lang->line('jenkel');
-
 	$data['lk'] = $this->lang->line('lk');
 	$data['prp'] = $this->lang->line('prp');
-
 	$data['statpernik'] = $this->lang->line('statpernik');
 	$data['single'] = $this->lang->line('single');
 	$data['menikah'] = $this->lang->line('menikah');
@@ -73,7 +72,6 @@ public function view_template($number_template){
 	$data['nampek'] = $this->lang->line('nampek');
 	$data['namper'] = $this->lang->line('namper');
 	$data['tahun'] = $this->lang->line('tahun');
-
 	$data['personal'] = $this->Model_data->get_data()->result();
 	$data['education'] = $this->Model_data->get_education()->result();
 	$data['employment'] = $this->Model_data->get_employment()->result();
@@ -82,14 +80,27 @@ public function view_template($number_template){
 	$data['languages'] = $this->Model_data->get_languages()->result();
 	$data['awards'] = $this->Model_data->get_awards()->result();
 	$data['references'] = $this->Model_data->get_references()->result();
-	
 	$bahasa = $this->session->userdata('bahasa');
  	$this->load->language('home', $bahasa);
-
 	$data['dashboard'] = $this->lang->line('dashboard');
 	$data[''] = $this->lang->line('settings');
 	$data['myprofile'] = $this->lang->line('myprofile');
-$this->load->view('template/'.$number_template, $data);
+$this->load->view('preview/'.$number_template, $data);
+} else {	redirect();}}
+
+public function choose($number_template){
+	if($this->session->userdata('member_identifier')){
+	$insert = array(
+      'no_template' => $number_template
+    );
+	$this->Model_data->insert_data($insert);
+	$username = $this->Model_data->get_username();
+	redirect($username);
+	}
+	else {
+	redirect();
+
+}
 }
 
 public function original(){

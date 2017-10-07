@@ -5,7 +5,7 @@ $lang['desc2'] = 'Build your profile now and share to as many people to open up 
 
 $lang['desc3'] = 'MyProfile is the right website for you to create a Profile that is attractive and modern. Steps are easy to support your career. MyProfile will improve the quality of your profile with tech support.';
 $lang['didyouknow'] = 'Did you know, that Profile is also critical to the success of your career. A good profile and a professional will reflect such personal.';
-$lang['start'] = 'You can start from now, because My Profile does not collect any fees. ';
+$lang['start'] = 'You can start from now, because Eprofile does not collect any fees. ';
 
 $lang['create'] = 'Create Profile Now';
 
@@ -18,7 +18,7 @@ $lang['f4'] = 'Create Card';
 
 $lang['register'] = 'Register';
 $lang['signin'] = 'Sign In';
-$lang['mt'] = 'More than 354 people used my profile to impress their friends';
+$lang['mt'] = 'More than 354 people used Eprofile to impress their friends';
 $lang['ju'] = 'Join us';
 
 $lang['home'] = 'Home';
@@ -30,14 +30,14 @@ $lang['testimonial'] = 'Testimonial';
 
 $lang['h1'] = 'Your solution for Online Profile';
 
-$lang['a1'] = 'MY PROFILE is a website service for generate CV or Resume or Profile easily and quickly. MY PROFILE provides much convenience and touch of technology on your Profile to make a good impression for you and those around';
+$lang['a1'] = 'Eprofile is a website service for generate CV or Resume or Profile easily and quickly. Eprofile provides much convenience and touch of technology on your Profile to make a good impression for you and those around';
 
 
 $lang['simpan'] = 'Save changes';
 $lang['hapus'] = 'Delete';
 $lang['batal'] = 'Cancel';
 
-$lang['myprofile'] = 'My Profile';
+$lang['myprofile'] = 'Eprofile';
 $lang['idpribadi'] = 'Personal identity';
 $lang['foto'] = 'Photo';
 $lang['namad'] = 'First Name';
@@ -71,5 +71,27 @@ $lang['deskripsi'] = 'Desciption';
 $lang['riwpek'] = 'Employment history';
 $lang['nampek'] = 'Job title';
 $lang['namper'] = 'Company name';
-$lang['tahun'] = 'Year';
+$lang['startdate'] = 'Start date';
+$lang['employed'] = 'Presently employed';
+$lang['enddate'] = 'End date';
+$lang['compensasion'] = 'Compensasion';
+$lang['mata_uang'] = 'Currency';
+$lang['interval'] = 'Time interval';
+$lang['year'] = 'Year';
+
+$lang['skill_name'] = 'Skill name';
+$lang['level'] = 'Level';
+$lang['beginner'] = 'Beginner';
+$lang['intermediate'] = 'Intermediate';
+$lang['advanced'] = 'Advanced';
+$lang['expert'] = 'Expert';
+
+$lang['language_name'] = 'Language name';
+$lang['conversational'] = 'Conversational';
+$lang['fluent'] = 'Fluent';
+$lang['native'] = 'Native';
+$lang['award_name'] = 'Award name';
+$lang['reference_name'] = 'Reference name';
+$lang['relationship'] = 'Relationship';
+
 ?>

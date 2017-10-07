@@ -65,7 +65,7 @@
 					
 					<!-- logo -->
 					<h1 class="">
-						<a href="#body" style="color: white">MY PROFILE</a>
+						<a href="#body" style="color: white">Eprofile</a>
 					</h1>
 					<!-- /logo -->
                 
@@ -91,7 +91,7 @@
 					<div class="container" style="margin-top: 5%; min-height: 100%">
 						<div class="col-md-10" >
 							<div class="wow animated fadeInDown" >
-							<h2 >WELCOME, CUSTOMER_NAME</h2>
+							<h2 >WELCOME TO EPROFILE</h2>
 								<ol class="list-group vertical-steps">
 								  <li class="list-group-item completed" ><span>Create your account - Done</span></li>
 								  <li class="list-group-item active">
@@ -118,7 +118,7 @@
                                      <!-- <button type="button" class="btn btn-primary btn-lg btn-block"></button> -->
 								  </li>
 								 <!-- 
-								  <li class="list-group-item"><span>Start using My Profile</span>
+								  <li class="list-group-item"><span>Start using Eprofile</span>
 								  <button type="button"  class="btn btn-primary btn-lg btn-block"><a href="<?php echo base_url(); ?>dashboard">Go to Dashboard</a></button></li>
                                   </li> -->
 								</ol>  
@@ -126,7 +126,7 @@
 						</div>
 						<div class="col-md-2" >
 							<div class="wow animated fadeInDown" >
-							<h3>IKLAN, Using My Profile saving your time more effective and efficient.</h3>
+							<h3>Using Eprofile saving your time more effective and efficient.</h3>
 							</div>
 						</div>
 					</div>

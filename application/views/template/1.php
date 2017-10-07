@@ -38,6 +38,10 @@
 </head>
 <body>
 <!-- Begin Wrapper -->
+<form action="<?php echo base_url();?>pdf/<?php echo $username ?>" method="get" target="_blank">
+  <input type="submit" value="Download PDF">
+</form>
+
 <div class="col-sm-12">
 <div id="wrapper">
   <div class="wrapper-top"></div>
@@ -183,10 +187,3 @@
 </div>
 </body>
 </html>
-
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/html2canvas.js"></script>
-    <script type="text/javascript">
-        html2canvas(document.body).then(function(canvas) {
-            document.body.appendChild(canvas);
-        });
-    </script>

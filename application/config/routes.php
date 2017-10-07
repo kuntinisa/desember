@@ -51,26 +51,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'main';
 $route['404_override'] = '';
-//$route[':any'] = "user/:any";
-// $route['translate_uri_dashes'] = FALSE;
+// $route[':any'] = "user/:any";
+$route['translate_uri_dashes'] = FALSE;
+$route['dashboard'] = "dashboard";
+$route['admin'] = "biodata";
+$route['data'] = "data";
+$route['hauth'] = "hauth";
+$route['logout'] = "logout";
+$route['main'] = "main";
+$route['personalize'] = "personalize";
+$route['privacypolicy'] = "privacypolicy";
+$route['tos'] = "tos";
+$route['user_authentication'] = "user_authentication";
+$route['biodata'] = "biodata";
+$route['pdf'] = "pdf";
+$route['eprofile'] = "eprofile";
 
+if($handle = opendir(APPPATH.'/controllers'))
+{
+    while(false !== ($controller = readdir($handle)))
+        {
+            if($controller != '.' && $controller != '..' && strstr($controller, '.') == '.php')
+                {
+                    $route[strstr($controller, '.', true)] = strstr($controller, '.', true);
+                    $route[strstr($controller, '.', true).'/(:any)'] = strstr($controller, '.', true).'/$1';
+                }
+        }
+    closedir($handle);
+}
 
-
-
-// if($handle = opendir(APPPATH.'/controllers'))
-// {
-//     while(false !== ($controller = readdir($handle)))
-//         {
-//             if($controller != '.' && $controller != '..' && strstr($controller, '.') == '.php')
-//                 {
-//                     $route[strstr($controller, '.', true)] = strstr($controller, '.', true);
-//                     $route[strstr($controller, '.', true).'/(:any)'] = strstr($controller, '.', true).'/$1';
-//                 }
-//         }
-//     closedir($handle);
-// }
-
-// // these are the /username routes
-// $route['([a-zA-Z0-9_-]+)'] = 'template/test/$1';
+// these are the /username routes
+$route['([a-zA-Z0-9_-]+)'] = 'template/test/$1';
 
 

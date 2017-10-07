@@ -1,5 +1,9 @@
+<style>
 
+</style>
     <body id="body">
+    
+
     	<!-- preloader -->
 		<div id="preloader" style="background-color: #009EE3">
             <div class="loder-box">
@@ -25,7 +29,7 @@
 					
 					<!-- logo -->
 					<h1 class="">
-						<a href="#body" style="color: white">MY PROFILE</a>
+						<a href="#body" style="color: white">Eprofile</a>
 					</h1>
 					<!-- /logo -->
                 </div>
@@ -36,9 +40,8 @@
                         <li><a href="#body"><?php echo $home ?></a></li>
                         <li><a href="#service"><?php echo $about ?></a></li>
                         <li><a href="#testimonials"><?php echo $testimonial ?></a></li>
-                        <li><a href="#contact"><?php echo $contact ?></a></li>
-                        <li><a href="<?php echo base_url(); ?>privacypolicy"><?php echo $privacy ?></a></li>
-                        <li><a href="<?php echo base_url(); ?>tos">Terms of Service</a></li>
+                        <li><a href="privacypolicy" onclick="window.open('<?php echo base_url();?>privacypolicy')"><?php echo $privacy ?></a></li>
+                        <li><a href="tos" onclick="window.open('<?php echo base_url();?>tos')">Terms of Service</a></li>
                         <li><a href=""><?php echo $help ?></a></li>
                         <li>
                  <form action="<?php echo base_url(); ?>" name="ganti" id="ganti" method="post" style="margin:10px">
@@ -88,12 +91,29 @@
 	                            <div class="caption-content" style="margin:40px">
 	                                <h2 class="animated fadeInDown" style="background-color: #009EE3"><?php echo $h1 ?></h2>
 	                                <h3 class="animated fadeInDown" style="color:#FFF"><?php echo $mt ?></h3>
-	                                 <a class="btn btn-blue btn-effect" data-toggle="modal" data-target="#myModal"><?php echo $ju ?></a>
-								     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+	                                 <!-- <a class="btn btn-blue btn-effect" data-toggle="modal" data-target="#myModal"><?php echo $ju ?></a> -->
+<div class="col-md-12">                      
+<button class="g-signin"  
+data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email"
+data-requestvisibleactions="http://schemas.google.com/AddActivity"
+data-clientId="987353039696-hvh8bdpv2rnqtm1qj7m8u04ts3n5bu2m.apps.googleusercontent.com"
+data-accesstype="offline"
+data-callback="mycoddeSignIn"
+data-theme="dark"
+data-cookiepolicy="single_host_origin">
+</button>
+</div>
+<div class="col-md-12"> 
+<a href = "" class="btn btn-primary"><fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();">
+</fb:login-button></a> 
+
+<!-- <a href = "<?php echo base_url(); ?>hauth/login/Twitter" class="btn btn-danger">Twitter</a> -->
+</div>
+								     <div class="myModalfade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
 								    aria-hidden="true" style="margin-top: 100px">
 								    <div class="modal-dialog modal-lg">
-								        <div class="modal-content">
-								            <div class="" style="background-color: #009EE3; height:10px;">
+								        <!-- <div class="modal-content"> -->
+								         <!--    <div class="" style="background-color: #009EE3; height:10px;">
 								            </div>
 								            <div class="modal-body">
 								                <div class="row">
@@ -104,10 +124,77 @@
 								                                    Sign in with</h3>
 								                            </div>
 								                            <div class="col-md-12">
-								                                <div class="btn-group btn-group-justified">
-								                                    <a href = "<?php echo base_url(); ?>hauth/login/Facebook" class="btn btn-primary">Facebook</a> 
-								                                    <a href = "<?php echo base_url(); ?>hauth/login/Google" class="btn btn-danger">Google</a>
-								                                    <a href = "<?php echo base_url(); ?>hauth/login/Twitter" class="btn btn-danger">Twitter</a>
+								                                <div class="btn-group btn-group-justified"> -->
+								                                    <!-- <a href = "<?php echo base_url(); ?>hauth/login/Facebook" class="btn btn-primary">Facebook</a>  -->
+								                                    <!-- <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"> -->
+<!-- </fb:login-button>
+<div id="status">
+</div> -->
+								                                    <!-- <a href = "" class="btn btn-primary"><fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();">
+</fb:login-button></a>  -->
+<!-- 
+
+<div id="status">
+</div> -->
+
+								                                    
+
+	<script type="text/javascript">
+	var gpclass = (function(){
+	
+	//Defining Class Variables here
+	var response = undefined;
+	return {
+		//Class functions / Objects
+		
+		mycoddeSignIn:function(response){
+			// The user is signed in
+			if (response['access_token']) {
+			
+				//Get User Info from Google Plus API
+				gapi.client.load('plus','v1',this.getUserInformation);
+				console.log('trying get info google');
+			} else if (response['error']) {
+				// There was an error, which means the user is not signed in.
+				alert('There was an error: ' + authResult['error']);
+			}
+		},
+		
+		getUserInformation: function(){
+			var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+			request.execute( function(profile) {
+				var email = profile['emails'].filter(function(v) {
+					return v.type === 'account'; // Filter out the primary email
+				})[0].value;
+				var fName = profile.displayName;
+				 // $.ajax({
+			  //       type: "POST",
+			  //       url: <?php echo base_url().'Main/login'; ?>
+			  //       data: {"fName": fName},  
+			  //       success: function (data) {
+			  //       }
+			  //   });
+			  console.log('Successful google login for: ' + fName);
+			  // $('#anchortag').prop('href', "<?php echo base_url(); ?>main/login"+1);
+				// $("#inputFullname").val(fName);
+				// $("#inputEmail").val(email);
+				window.open("<?php echo base_url() ?>main/login/"+"google"+email+"/"+email); 
+				// window.open("<?php echo base_url() ?>main/login?var1="google"+email;?>&var2=email"); 
+
+			});
+		}
+	
+	}; //End of Return
+	})();
+	
+	function mycoddeSignIn(gpSignInResponse){
+		gpclass.mycoddeSignIn(gpSignInResponse);
+	}
+	</script>
+								                                    <!-- <a href = "<?php echo base_url(); ?>hauth/login/Google" class="btn btn-danger">Google</a> -->
+								                                    <div>
+								                                    <!-- <a href = "<?php echo base_url(); ?>hauth/login/Twitter" class="btn btn-danger">Twitter</a> -->
+								                                    </div>
 								                            </div>
 								                        </div>
 								                    </div>
@@ -161,10 +248,10 @@
 				<div class="container">
 					<div class="row">
 					
-						<div class="sec-title text-center wow animated fadeInDown">
+						<!-- <div class="sec-title text-center wow animated fadeInDown">
 							<h2>FEATURED PROJECTS</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
+						</div> -->
 						
 
 						<ul class="project-wrapper wow animated fadeInUp">
@@ -173,7 +260,7 @@
 								
 							</li>
 							
-							<li class="portfolio-item">
+							<!-- <li class="portfolio-item">
 								<img src="<?php echo base_url(); ?>assets/img/portfolio/item2.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
 								<figcaption class="mask">
 									<h3>Wall street</h3>
@@ -195,21 +282,21 @@
 									<li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="<?php echo base_url(); ?>assets/img/portfolio/item3.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
-							</li>
+							</li> -->
 							
 							<li class="">
 								<img src="<?php echo base_url(); ?>assets/img/muchtemplate.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
-								<figcaption class="mask">
+								<!-- <figcaption class="mask">
 									<h3>Wall street</h3>
 									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
-								</figcaption>
-								<ul class="external">
+								</figcaption> -->
+								<!-- <ul class="external">
 									<li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="img/portfolio/item4.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
+								</ul> -->
 							</li>
 							
-							<li class="portfolio-item">
+							<!-- <li class="portfolio-item">
 								<img src="<?php echo base_url(); ?>assets/img/portfolio/item5.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
 								<figcaption class="mask">
 									<h3>Wall street</h3>
@@ -231,7 +318,7 @@
 									<li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="<?php echo base_url(); ?>assets/img/portfolio/item6.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
-							</li>
+							</li> -->
 						</ul>
 						
 					</div>
@@ -310,8 +397,8 @@
 								<div class="testimonial-item text-center">
 									<img src="<?php echo base_url(); ?>assets/img/member-1.jpg" alt="Our Clients">
 									<div class="clearfix">
-										<span>Katty Flower</span>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+										<span>JUROIJATU MAJURITA UNTSA</span>
+										<p>Website ini benar-benar bermanfaat untuk saya. Saya dapat membuat CV yang cantik dengan mudah dan membagikan teman saya untuk keperluan seperti berkenalan bahkan untuk melamar pekerjaan</p>
 									</div>
 								</div>
 								<div class="testimonial-item text-center">
@@ -337,7 +424,7 @@
 			<!-- end Testimonial section -->
 			
 			<!-- Price section -->
-			<section id="price">
+			<!-- <section id="price">
 				<div class="container">
 					<div class="row">
 					
@@ -402,7 +489,7 @@
 		
 					</div>
 				</div>
-			</section>
+			</section> -->
 			<!-- end Price section -->
 			
 			<!-- Social section -->
@@ -427,7 +514,7 @@
 				</div>
 			</section>
 			<!-- end Social section -->
-			<!-- about section -->
+			<!-- about section 
 			<section id="privacy" >
 				<div class="container">
 					<div class="row">
@@ -451,7 +538,7 @@
 							<div class="welcome-block">
 								<h3>Welcome To Our Site</h3>								
 						     	 <div class="message-body">
-									<img src="<?php echo base_url(); ?>assets/img/member-1.jpg" class="pull-left" alt="member">
+									<img src="<?php echo base_url(); ?>assets/img/member-4.jpg" class="pull-left" alt="member">
 						       		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
 						     	 </div>
 						       	<a href="#" class="btn btn-border btn-effect pull-right">Read More</a>
@@ -460,49 +547,8 @@
 					</div>
 				</div>
 			</section>
-			<!-- end about section -->
-			<!-- Contact section -->
-			<section id="contact" >
-				<div class="container">
-					<div class="row">
-						
-						<div class="sec-title text-center wow animated fadeInDown">
-							<h2>Contact</h2>
-							<p>Leave a Message</p>
-						</div>
-						
-						
-						<div class="col-md-7 contact-form wow animated fadeInLeft">
-							<form action="#" method="post">
-								<div class="input-field">
-									<input type="text" name="name" class="form-control" placeholder="Your Name...">
-								</div>
-								<div class="input-field">
-									<input type="email" name="email" class="form-control" placeholder="Your Email...">
-								</div>
-								<div class="input-field">
-									<input type="text" name="subject" class="form-control" placeholder="Subject...">
-								</div>
-								<div class="input-field">
-									<textarea name="message" class="form-control" placeholder="Messages..."></textarea>
-								</div>
-						       	<button type="submit" id="submit" class="btn btn-blue btn-effect">Send</button>
-							</form>
-						</div>
-						
-						<div class="col-md-5 wow animated fadeInRight">
-							<address class="contact-details">
-								<h3>Contact Us</h3>						
-								<p><i class="fa fa-pencil"></i>Universitas Gadjah Mada<span>PO Box 55284</span> <span>Jalan Kaliurang KM 4,5 Gg Sumilir No 6</span><span>Indonesia</span></p><br>
-								<p><i class="fa fa-phone"></i>Phone: 0856 - 0092 - 9309 </p>
-								<p><i class="fa fa-envelope"></i>kuntinisa250896@gmail.com</p>
-							</address>
-						</div>
+			end about section -->
 			
-					</div>
-				</div>
-			</section>
-			<!-- end Contact section -->
 			<!-- 
 			<section id="google-map">
 				<div id="map-canvas" class="wow animated fadeInUp"></div>
@@ -539,5 +585,92 @@
         <script src="<?php echo base_url(); ?>assets/js/wow.min.js"></script>
 		<!-- Custom Functions -->
         <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else {
+      // The person is not logged into your app or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1727062460957299',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.8' // use graph api version 2.8
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', {fields: 'name, email'}, function(response) {
+      console.log('Successful login for: ' + response.email);
+      var email = response.email;
+      // document.getElementById('status').innerHTML =
+      //   'Thanks for logging in, '+ response.name +'!';
+      window.open("<?php echo base_url() ?>main/login/"+"facebook"+email+"/"+email); 
+      // window.open("<?php echo base_url() ?>main/login/"+"google"+email); 
+    });
+  }
+</script>
+
+<!-- 
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+ -->
+
+
     </body>
 </html>

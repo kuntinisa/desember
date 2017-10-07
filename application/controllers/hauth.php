@@ -38,7 +38,7 @@ class HAuth extends CI_Controller {
 					$data['user_profile'] = $user_profile;
 
 					// $this->hauth->cek($data);
-					$data_customer = array (
+					$data_member = array (
 				'identifier' => $user_profile->identifier, 
 				'profile_url' => $user_profile->profileURL, 
 				'photo_url' => $user_profile->photoURL, 
@@ -47,10 +47,10 @@ class HAuth extends CI_Controller {
 				'email' => $user_profile->email
 						);
 					$this->load->model('hauth_data');
-					$this->session->set_userdata('customer_identifier', $user_profile->identifier);
-					$this->hauth_data->insert_user('customer', $data_customer);
+					$this->session->set_userdata('member_identifier', $user_profile->identifier);
+					$this->hauth_data->insert_user('member', $data_member);
 					
-					$this->load->view('hauth/done', $data);
+					// $this->load->view('hauth/done', $data);
 					
 				}
 				else // Cannot authenticate user
@@ -75,7 +75,7 @@ class HAuth extends CI_Controller {
 				case 3 : $error = 'Unknown or disabled provider.'; break;
 				case 4 : $error = 'Missing provider application credentials.'; break;
 				case 5 : log_message('debug', 'controllers.HAuth.login: Authentification failed. The user has canceled the authentication or the provider refused the connection.');
-				         //redirect();
+				         redirect();
 				         if (isset($service))
 				         {
 				         	log_message('debug', 'controllers.HAuth.login: logging out from service.');

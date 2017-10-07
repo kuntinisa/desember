@@ -23,73 +23,21 @@
                       </div>
                       <div class="col-lg-12">
                         <div class="form-group">
-                        <label class="col-lg-3 control-label">Password</label>
+                        <label class="col-lg-3 control-label">Username</label>
                         <div class="col-lg-8">
                           <input class="form-control" value="" type="password">
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">dfdf</label>
-                        <div class="col-lg-8">
-                          <input class="form-control" value="" type="text">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">dfdf</label>
-                        <div class="col-lg-8">
-                          <input class="form-control" value="" type="date">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">dgdg</label>
+                     <div class="form-group">
+                        <label class="col-lg-3 control-label">Language</label>
                         <div class="ui-select col-lg-8">
                             <select id="user_time_zone" class="form-control">
-                              <option value="Male">dfdfe</option>
-                              <option value="Female">lokjuhytgr</option>
+                              <option value="BahasaIndonesia">Bahasa Indonesia</option>
+                              <option value="English">English</option>
                             </select>
                           </div>
                       </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">lkjhr</label>
-                        <div class="ui-select col-lg-8">
-                            <select id="user_time_zone" class="form-control">
-                              <option value="Single">tyre</option>
-                              <option value="Married">ytre</option>
-                              <option value="Divorce">lkjh</option>
-                            </select>
-                          </div>
-                      </div>
-                       <div class="form-group">
-                        <label class="col-lg-3 control-label">iujh</label>
-                        <div class="col-lg-8">
-                        <textarea class="form-control"></textarea>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">5trg</label>
-                        <div class="col-lg-8">
-                          <input class="form-control" value="" type="number">
-                        </div>
-                    
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">mnb</label>
-                        <div class="col-lg-8">
-                          <input class="form-control" value="" type="number">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-lg-3 control-label">ert</label>
-                        <div class="col-lg-8">
-                          <input class="form-control" value="" type="text">
-                        </div>
-                      </div>
-                       <div class="form-group">
-                        <label class="col-lg-3 control-label">hgvc</label>
-                        <div class="col-lg-8">
-                          <input class="form-control" value="" type="text">
-                        </div>
-                      </div>
+                      
                      
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
@@ -106,47 +54,8 @@
         </div>
 
          
-        <div class="">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                <h3 class="panel-title">Authentication</h3>
-                    <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-                </div>
-                <div class="panel-body">
-                <label class="col-md-3 control-label">Current authentication methods :</label>
-                     <div class="panel-primary panel2" id="award_fields">
-
-                     </div>
-
-                      </div>
-            </div>
-        </div>
-         <div class="">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                <h3 class="panel-title">Preferences</h3>
-                    <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-                </div>
-                <div class="panel-body">
-               <div class="form-group">
-                        <label class="col-lg-3 control-label">Language</label>
-                        <div class="ui-select col-lg-8">
-                            <select id="user_time_zone" class="form-control">
-                              <option value="English">English</option>
-                              <option value="Indonesia">Bahasa Indonesia</option>
-                            </select>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                     <div class="panel-primary panel2" id="award_fields">
-
-                     </div>
-
-                      </div>
-            </div>
-        </div>
-
-        </div>
+      
+       
        
         </div>
        

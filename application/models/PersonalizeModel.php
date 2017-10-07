@@ -9,14 +9,14 @@ class PersonalizeModel extends CI_Model {
                 $this->db->select('username');
                 $this->db->where('username', $search_data);
 
-                return $this->db->get('customer', 10)->result();
+                return $this->db->get('member', 10)->result();
         }
 
  function vanity($search){
-  $this->db->select("id_customer");
+  $this->db->select("id_member");
   $whereCondition = array('username' =>$search);
   $this->db->where($whereCondition);
-  $this->db->from('customer');
+  $this->db->from('member');
   $query = $this->db->get();
   return $query->result();
  }

@@ -27,7 +27,7 @@
 					
 					<!-- logo -->
 					<h1 class="">
-						<a href="#body" style="color: white">MY PROFILE</a>
+						<a href="#body" style="color: white">Eprofile</a>
 					</h1>
 					<!-- /logo -->
                 </div>

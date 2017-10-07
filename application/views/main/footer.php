@@ -25,7 +25,7 @@
 							</ul>
 						</div>
 						
-						<p>Copyright &copy; 2016 Design and Developed By <a href="http://www.kuntikhoirunnisaa.xyz">Kunti Khoirunnisaa</a> </p>
+						<p>Copyright &copy; 2017 </p>
 					</div>
 				</div>
 			</div>

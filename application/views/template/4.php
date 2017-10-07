@@ -37,6 +37,9 @@
 
 <body>
     <!-- ******HEADER****** --> 
+    <!-- Begin Wrapper -->
+
+  
     <header class="header">
         <div class="container">                       
             <img class="profile-image img-responsive pull-left" src="<?php echo base_url(); ?>assets/template/2/images/avt.png" alt="James Lee" />
@@ -52,8 +55,11 @@
                     <li><a href="#"><i class="fa fa-github-alt"></i></a></li>                  
                     <li class="last-item"><a href="#"><i class="fa fa-hacker-news"></i></a></li>                 
                 </ul> 
+                <form action="<?php echo base_url();?>pdf/<?php echo $username ?>" method="get" target="_blank">
+  <input type="submit" value="Download PDF">
+</form>
             </div><!--//profile-->
-            <a class="btn btn-cta-primary pull-right" href="http://themes.3rdwavemedia.com/" target="_blank"><i class="fa fa-paper-plane"></i> Action for this</a>              
+                        
         </div><!--//container-->
     </header><!--//header-->
     
@@ -75,6 +81,7 @@
                                 <?php } ?>
                             </ul>
                         </div><!--//content-->  
+
                     </div><!--//section-inner-->                 
                 </aside><!--//aside-->
                 <aside class="skills aside section">
@@ -240,7 +247,7 @@
     <footer class="footer">
         <div class="container text-center">
                 <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">My Profile VIP 2017</small>
+                <small class="copyright">EProfile 2017</small>
         </div><!--//container-->
     </footer><!--//footer-->
  
@@ -260,10 +267,3 @@
 </body>
 </html> 
 
-
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/html2canvas.js"></script>
-    <script type="text/javascript">
-        html2canvas(document.body).then(function(canvas) {
-            document.body.appendChild(canvas);
-        });
-    </script>

@@ -10,14 +10,14 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h1 class="page-header"><b>Set up your first Profile</b></h1>
-    <h4 style="font-size:13pt">Buat profil digital pertama kamu, dan jadilah lebih keren</h4>
+    <h4 style="font-size:13pt">Create your first online CV</h4>
     <h5 style="font-size:13pt">
     Choose one of these handy guides to set up the most useful digital profile: </h5>
     <?php
 
-echo $this->session->userdata('customer_identifier');
+// echo $this->session->userdata('member_identifier');
 
-echo $this->session->userdata('id_customer');
+// echo $this->session->userdata('id_member');
     ?>
                 </div>
                 <!-- /.col-lg-12 -->

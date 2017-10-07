@@ -20,6 +20,7 @@
 		
 		<!-- CSS
 		================================================== -->
+		<link rel="icon" href="<?=base_url()?>/assets/img/logo.png" type="image/gif">
 		
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		

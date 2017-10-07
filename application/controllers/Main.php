@@ -2,25 +2,10 @@
 
 class Main extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+
 	 public function index()
  {
- 	//$this->load->language('home', $bahasa);
-
+ 	
  	if (isset($_POST["bahasa"])) {
     $bahasa = $this->input->post('bahasa');
 	$this->session->set_userdata('language', $bahasa);
@@ -48,10 +33,20 @@ class Main extends CI_Controller {
   $this->load->view('main/footer');
  }
 
- public function login()
+ public function login($identifier, $email)
  {
-	$this->load->view('main/header');
-  $this->load->view('main/login');
+		// $myJSVar = $this->input->post('fName');
+		$data_member = array (
+		'identifier' => $identifier, 
+		// 'nama_depan' => '$name', 
+		// 'nama_belakang' => '', 
+		'email' => $email
+		);
+	    // echo $message;
+		$this->load->model('hauth_data');
+		$this->session->set_userdata('member_identifier', $data_member['identifier']);
+		$this->hauth_data->insert_user('member', $data_member);	
+		redirect('personalize');				
  }
  public function auth()
  {redirect ("main/dashboard");

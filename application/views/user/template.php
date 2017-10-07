@@ -8,11 +8,7 @@
 
 
         <div id="page-wrapper" style ="background-color: #e5e6e7">
-            <div class="row">
-            <h1>My recent template</h1>
-                <div class="col-lg-12 text-center">
-                  </div>
-            </div>
+           
             <div class="row">
                 <h1>Choose your template</h1>
                 <div class="col-lg-12 text-center">
@@ -21,9 +17,11 @@
               <div class="thumbnail">
                 <img  src="<?php echo base_url(); ?>assets/img/resume_same.png" alt="ALT NAME">
                 <div class="caption">
+
                   <h3>Clipboard template</h3>
                   <p>Template more formal and professional. Choose your own color of clipboard</p>
                   <p align="center"><a target="_blank" href="<?php echo base_url(); ?>dashboard/view_template/1" class="btn btn-primary btn-block">Preview</a></p>
+
                 </div>
               </div>
             </div>
@@ -58,36 +56,7 @@
               </div>
             </div>
             </div>
-            <div class="col-lg-6">
-              <div class="thumbnail">
-                <img src="http://placehold.it/620x500" alt="ALT NAME">
-                <div class="caption">
-                  <h3>Header Name</h3>
-                  <p>Description</p>
-                  <p align="center"><a target="_blank" href="http://bootsnipp.com/" class="btn btn-primary btn-block">Preview</a></p>
-                </div>
-              </div>
-            </div>
-              <div class="col-lg-6">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/620x500" alt="ALT NAME">
-                  <div class="caption">
-                    <h3>Header Name</h3>
-                    <p>Description</p>
-                    <p align="center"><a target="_blank" href="http://bootsnipp.com/" class="btn btn-primary btn-block">Preview</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/620x500" alt="ALT NAME">
-                  <div class="caption">
-                    <h3>Header Name</h3>
-                    <p>Description</p>
-                    <p align="center"><a target="_blank" href="http://bootsnipp.com/" class="btn btn-primary btn-block">Preview</a></p>
-                  </div>
-                </div>
-              </div>
+           
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

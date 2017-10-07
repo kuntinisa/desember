@@ -7,7 +7,7 @@
                     <span class="ic
     on-bar"></span>
                 </button>
-                <a class="navbar-brand" href = "<?php echo base_url(); ?>dashboard">MY PROFILE</a>
+                <a class="navbar-brand" href = "<?php echo base_url(); ?>dashboard">Eprofile</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -239,7 +239,7 @@
                             <a href = "<?php echo base_url(); ?>dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a><i class="fa fa-bar-chart-o fa-fw"></i>My Profile<span class="fa arrow"></span></a>
+                            <a><i class="fa fa-bar-chart-o fa-fw"></i>Eprofile<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a  href = "<?php echo base_url(); ?>biodata">Biodata</a>

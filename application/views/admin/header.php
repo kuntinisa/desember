@@ -6,11 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MY PROFILE</title>
+    <title>Eprofile</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+<link rel="icon" href="<?=base_url()?>/assets/img/logo.png" type="image/gif">
+        
     <!-- MetisMenu CSS -->
     <link href="<?php echo base_url(); ?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
@@ -54,7 +55,7 @@
                     <span class="ic
     on-bar"></span>
                 </button>
-                <a class="navbar-brand" href = "<?php echo base_url(); ?>dashboard">MY PROFILE</a>
+                <a class="navbar-brand" href = "<?php echo base_url(); ?>dashboard">Eprofile</a>
             </div>
             <!-- /.navbar-header -->
 
